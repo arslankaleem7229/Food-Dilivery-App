@@ -1,16 +1,42 @@
-# foodies
+# Foodies
+## Food Dilivery App
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Foodies is a Food Dilivery App (Android, IOS). Right now data is hard coded but will implement different APIs to fetch real data.
 
-A few resources to get you started if this is your first Flutter project:
+- User can see nearby Restaurants
+- Recent Orders
+- Cart
+- Restuarant Information
+- Foods Availablitiy
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Installation
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Foodies requires [Flutter](https://flutter.dev/docs/get-started/install) v2.0.4-stable to run.
+
+Install the dependencies and devDependencies and start the server.
+
+```sh
+$ cd Foodies
+$ flutter pub get
+$ flutter run
+```
+
+For production environments...
+
+
+## Plugins
+
+Foodies is currently extended with the following plugins.
+Instructions on how to use them in your own application are linked below.
+
+| Plugin | README |
+| ------ | ------ |
+| Flutter Launcher Icon | [https://pub.dev/packages/flutter_launcher_icons][PlDb] |
+| GitHub | [https://www.github.com][PlGh] |
+
+## Interface
+
+
+![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997063.png?raw=true)|![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997087.png?raw=true)|![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997092.png?raw=true)|![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997100.png?raw=true)
