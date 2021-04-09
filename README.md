@@ -25,6 +25,7 @@ $ flutter run
 
 
 ## Interface
-
-
+Homepage               |  Cart               | Cart               |  Restaurant Information
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997063.png?raw=true)|![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997087.png?raw=true)|![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997092.png?raw=true)|![](https://github.com/arslankaleem7229/Foodies/blob/main/assets/Screenshots/Screenshot_1617997100.png?raw=true)
+
