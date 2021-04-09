@@ -23,18 +23,6 @@ $ flutter pub get
 $ flutter run
 ```
 
-For production environments...
-
-
-## Plugins
-
-Foodies is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
-
-| Plugin | README |
-| ------ | ------ |
-| Flutter Launcher Icon | [https://pub.dev/packages/flutter_launcher_icons][PlDb] |
-| GitHub | [https://www.github.com][PlGh] |
 
 ## Interface
 
