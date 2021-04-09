@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foodies/Widgets/nearby_restaurants.dart';
 import 'package:foodies/Widgets/recent_orders.dart';
 import 'package:foodies/data/data.dart';
+import 'package:foodies/screens/cart.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -16,7 +17,8 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => CartScreen())),
             child: Text(
               "Cart(${currentUser.cart.length})",
               style: TextStyle(color: Colors.white, fontSize: 18.0),

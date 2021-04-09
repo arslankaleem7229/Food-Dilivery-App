@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodies/Widgets/rating.dart';
 import 'package:foodies/data/data.dart';
-import 'package:foodies/screens/restaurant_screen.dart';
+import 'package:foodies/screens/restaurant.dart';
 import 'package:foodies/styles/constant.dart';
 
 class NearbyRestaurants extends StatelessWidget {

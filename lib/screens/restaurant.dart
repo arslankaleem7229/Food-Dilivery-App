@@ -39,7 +39,17 @@ class RestaurantScreen extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.all(20.0),
-            color: Colors.amber,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Colors.amber,
+                  Colors.amberAccent,
+                  Colors.white,
+                ],
+              ),
+            ),
             height: MediaQuery.of(context).size.height / 6,
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -68,7 +78,6 @@ class RestaurantScreen extends StatelessWidget {
             ),
           ),
           Container(
-            color: Colors.greenAccent,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -119,7 +128,7 @@ class RestaurantScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItems(
+  Stack _buildMenuItems(
       {@required BuildContext buildContext, @required Food menuItems}) {
     return Stack(
       alignment: Alignment.center,
