@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:foodies/Widgets/rating.dart';
 import 'package:foodies/data/data.dart';
 import 'package:foodies/models/order.dart';
+import 'package:foodies/models/restaurant.dart';
 import 'package:foodies/styles/constant.dart';
 
 class NearbyRestaurants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Order order;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -16,81 +20,62 @@ class NearbyRestaurants extends StatelessWidget {
             style: kTextStyle(20.0, FontWeight.w600, letterSpacing: 1.2),
           ),
         ),
-        Container(
-          height: 120,
-          child: ListView.builder(
-            physics: BouncingScrollPhysics(),
-            scrollDirection: Axis.horizontal,
-            itemCount: currentUser.orders.length,
-            itemBuilder: (context, index) {
-              Order order = currentUser.orders[index];
-              return buildNearbyRestaurants(order: order, context: context);
-              // return
-            },
-          ),
-        )
+        _buildRestaurants(),
       ],
     );
   }
 
-  buildNearbyRestaurants(
-      {@required Order order, @required BuildContext context}) {
-    return Container(
-      margin: EdgeInsets.all(5.0),
-      decoration: BoxDecoration(
-        border: Border.all(width: 1.0, color: Colors.grey),
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15.0),
-            child: Image(
-              height: 120.0,
-              width: 100.0,
-              image: AssetImage(order.food.imageUrl),
-              fit: BoxFit.cover,
-            ),
+  _buildRestaurants() {
+    List<Widget> _restaurantList = [];
+    restaurants.forEach((restaurant) {
+      _restaurantList.add(
+        Container(
+          margin: EdgeInsets.all(15.0),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.greenAccent),
+            // color: Colors.blue,
+            borderRadius: BorderRadius.circular(25.0),
           ),
-          // SizedBox(width: 10.0),
-          Container(
-            margin: EdgeInsets.only(left: 10.0),
-            width: 100,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  order.food.name,
-                  style: kTextStyle(20, FontWeight.bold),
-                  overflow: TextOverflow.ellipsis,
+          child: Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15.0),
+                child: Image(
+                  height: 130.0,
+                  width: 130.0,
+                  image: AssetImage(restaurant.imageUrl),
+                  fit: BoxFit.cover,
                 ),
-                SizedBox(height: 4.0),
-                Text(
-                  order.restaurant.name,
-                  style: kTextStyle(16, FontWeight.w600),
-                  overflow: TextOverflow.ellipsis,
+              ),
+              Expanded(
+                child: Container(
+                  margin: EdgeInsets.only(left: 20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      new Text(
+                        restaurant.name,
+                        style: kTextStyle(20, FontWeight.bold),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Ratings(rating: restaurant.rating),
+                      new Text(
+                        restaurant.address,
+                        style: kTextStyle(16, FontWeight.bold),
+                        overflow: TextOverflow.clip,
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 4.0),
-                Text(
-                  order.date,
-                  style: kTextStyle(16, FontWeight.w600),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ],
-            ),
+              )
+            ],
           ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 15.0),
-            child: Icon(
-              Icons.add_circle,
-              size: 50.0,
-              color: Theme.of(context).primaryColor,
-            ),
-          ),
-        ],
-      ),
+        ),
+      );
+    });
+    return Column(
+      children: _restaurantList,
     );
   }
 }
